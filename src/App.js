@@ -2,6 +2,7 @@ import { Web3ReactProvider } from '@web3-react/core';
 import { Web3Provider } from '@ethersproject/providers';
 import VanillaConnectionComponent from './VanillaConnectionComponent';
 import Web3ReactConnectionComponent from './Web3ReactConnectionComponent';
+import Web3Contract from "./Web3Contract"
 window.onload = function () {
 	localStorage.clear();
 };
@@ -16,7 +17,8 @@ function App() {
 	return (
 		<Web3ReactProvider getLibrary={getLibrary}>
 			<div className="flex space-x-3">
-				<Web3ReactConnectionComponent />
+				<Web3Contract />
+				{/* <Web3ReactConnectionComponent /> */}
 				{/* <VanillaConnectionComponent /> */}
 			</div>
 		</Web3ReactProvider>

@@ -1,14 +1,14 @@
-import { getContract } from './Helpers/contract';
+import { getContract } from './helpers/contract';
 import { Web3Provider } from '@ethersproject/providers';
 import React from 'react';
 import WalletConnectProvider from '@walletconnect/ethereum-provider';
 import WalletLink from 'walletlink';
 
 const VanillaConnectionComponent = () => {
-	const [ web3Library, setWeb3Library ] = React.useState();
-	const [ web3Account, setWeb3Account ] = React.useState();
-	const [ walletlinkProvider, setWalletlinkProvider ] = React.useState();
-	const [ walletConnectProvider, setWalletConnectProvider ] = React.useState();
+	const [web3Library, setWeb3Library] = React.useState();
+	const [web3Account, setWeb3Account] = React.useState();
+	const [walletlinkProvider, setWalletlinkProvider] = React.useState();
+	const [walletConnectProvider, setWalletConnectProvider] = React.useState();
 	//vanilla
 	const writeToContract = async () => {
 		try {
@@ -79,7 +79,7 @@ const VanillaConnectionComponent = () => {
 				appName: 'demo-app',
 				darkMode: true
 			});
-			
+
 			const provider = walletLink.makeWeb3Provider(
 				'https://rinkeby.infura.io/v3/55d040fb60064deaa7acc8e320d99bd4',
 				4
@@ -104,7 +104,7 @@ const VanillaConnectionComponent = () => {
 		walletlinkProvider.close();
 		setWalletlinkProvider(null);
 	};
-	const disconnectWalletconnect = ()=>{
+	const disconnectWalletconnect = () => {
 		walletConnectProvider.disconnect()
 		setWalletConnectProvider(null);
 	}

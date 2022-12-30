@@ -1,3 +1,3 @@
 # Web3React
 
-node version: 16.
+node version: v16.16.0
